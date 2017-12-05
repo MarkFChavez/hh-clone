@@ -2,7 +2,11 @@ import React from 'react'
 
 const Header = props => (
   <header className='header--box'>
-    {props.children}
+    <h2> {props.title} </h2>
+    <b>&gt;</b> &nbsp;
+    <small>
+      a <a href='#'>hacker hunt</a> clone written by <a href='#'>@markisundefined</a>
+    </small>
     <hr />
   </header>
 )
