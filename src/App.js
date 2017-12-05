@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
-import Card from './components/Card'
+import CardList from './components/CardList'
 import TopicList from './components/TopicList'
+import items from './data'
 
 const TOPICS = [
   'Development',
@@ -18,28 +19,29 @@ const TOPICS = [
 ]
 
 class App extends Component {
+
+  state = { items }
+
   render() {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col'>
+          <div className='col-md-8 offset-md-2'>
             <Header title='HH' />
           </div>
         </div>
 
         <div className='row'>
-          <div className='col-2'>
-            <TopicList topics={TOPICS} />
-          </div>
+          <div className='col-md-8 offset-md-2'>
+            <div className='row'>
+              <div className='col-md-3'>
+                <TopicList topics={TOPICS} />
+              </div>
 
-          <div className='col-10'>
-            <Card
-              title='Go Freaking Do It'
-              desc='Smart contract for reaching your goals.' />
-
-            <Card
-              title='Goodreads for podcasts'
-              desc='Echo Podcasts' />
+              <div className='col-md-9'>
+                <CardList items={this.state.items} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
